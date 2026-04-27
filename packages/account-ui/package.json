@@ -48,7 +48,7 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "postbuild": "cp -r src/frameworks/vue/*.vue dist/frameworks/vue/ && cp -r src/frameworks/svelte/*.svelte dist/frameworks/svelte/",
-    "build": "node compile-assets.cjs && rm -rf ./dist && tsc -p ./tsconfig.build.json && tsc-alias && yarn postbuild",
+    "build": "node init && node compile-assets.cjs && rm -rf ./dist && tsc -p ./tsconfig.build.json && tsc-alias && yarn postbuild",
     "typecheck": "tsc --noEmit",
     "lint": "biome lint .",
     "format": "biome format . --write",

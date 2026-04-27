@@ -1,7 +1,7 @@
 {
   "name": "@base-org/account-cli",
   "version": "0.1.0",
-  "description": "Base Account CLI — agent-first CLI for interacting with Base Accounts",
+  "description": "Base Account CLI \u2014 agent-first CLI for interacting with Base Accounts",
   "keywords": [
     "base",
     "account",
@@ -30,9 +30,9 @@
     "clean": "rm -rf dist && rm -rf node_modules",
     "test": "vitest run",
     "prebuild": "rm -rf ./dist",
-    "build": "tsc -p ./tsconfig.build.json",
+    "build": "node init && tsc -p ./tsconfig.build.json",
     "postbuild": "printf '#!/usr/bin/env node\n' | cat - dist/index.js > dist/index.tmp && mv dist/index.tmp dist/index.js",
-    "dev": "tsc --watch",
+    "dev": "node init && tsc --watch",
     "typecheck": "tsc --noEmit",
     "lint": "biome lint .",
     "format": "biome format . --write",
