@@ -12,7 +12,6 @@ node_modules
 
 # misc
 .DS_Store
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -24,7 +23,6 @@ yarn-error.log*
 # eslint cache
 .eslintcache
 
-.vscode
 .idea
 
 *-svg.ts
@@ -49,3 +47,4 @@ examples/testapp/out/
 examples/testapp/.next/
 
 /**/tsconfig.tsbuildinfo
+config.bat

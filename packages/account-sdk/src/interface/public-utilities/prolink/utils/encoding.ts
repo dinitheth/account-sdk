@@ -190,9 +190,12 @@ export function bytesToHex(bytes: Uint8Array): string {
  * @returns Bytes
  */
 export function hexToBytes(hex: string): Uint8Array {
-  // Normalize to ensure 0x prefix
-  const normalized = hex.startsWith('0x') ? hex : `0x${hex}`;
+  // Normalize to remove 0x prefix if present
+  const cleanHex = hex.startsWith('0x') ? hex.slice(2) : hex;
 
-  // Use Ox's Bytes.fromHex which properly handles odd-length hex strings
-  return Bytes.fromHex(normalized as Hex.Hex);
+  // Pad to even length with a leading zero if needed
+  const paddedHex = cleanHex.length % 2 === 0 ? cleanHex : `0${cleanHex}`;
+
+  // Use Ox's Bytes.fromHex with the correctly formatted hex string
+  return Bytes.fromHex(`0x${paddedHex}` as Hex.Hex);
 }
